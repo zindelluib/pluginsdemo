@@ -29,6 +29,8 @@ Future<Photo> addPhoto(String description,String file) async{
 	if(res.statusCode == 201)
 		res.stream.transform(utf8.decoder).listen((value) {
 	        print(value);
+
+	        //TODO fix returning response data
 	        return Photo.fromJson(jsonDecode(value));
 	    });
 	else
